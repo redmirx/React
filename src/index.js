@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <center>Hello World</center>
+    <p>Hi there</p>
   </React.StrictMode>
 );
 
