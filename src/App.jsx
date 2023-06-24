@@ -77,9 +77,10 @@ const App = () => {
       <button onClick={() => transferOutTest(device)}>
         Transfer outer Test
       </button> */}
-      <h1>
+      <h1>Barcode Scanner</h1>
+      <h3>
         VendorId: {vendorId} | ProductId: {productId}
-      </h1>
+      </h3>
       <button onClick={requestDevice}>Request device</button>
       <br />
       <br />
