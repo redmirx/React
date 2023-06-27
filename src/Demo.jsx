@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import './Scale.css';
+
+// if ("hid" in navigator) {
+//   // The WebHID API is supported.
+
+// }
+console.log(navigator.hid, 'navigator');
 class Demo extends Component {
   constructor(props) {
     super(props);
 
     this.USB_FILTERS = [
-      // { vendorId: 0x0922, productId: 0x8003 }, // mini scale
-      { vendorId: 0x067b, productId: 0x2303 }, // mertech scale
+      { vendorId: 0x0922, productId: 0x8003 }, // mini scale
+      // { vendorId: 0x067b, productId: 0x2303 }, // mertech scale
     ];
 
     this.UNIT_MODES = { 2: 'g', 11: 'oz' };
