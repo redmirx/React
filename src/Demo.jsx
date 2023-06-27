@@ -5,7 +5,8 @@ class Demo extends Component {
     super(props);
 
     this.USB_FILTERS = [
-      { vendorId: 0x0922, productId: 0x8003 }, // 10lb scale
+      // { vendorId: 0x0922, productId: 0x8003 }, // 10lb scale
+      { vendorId: 0x067b, productId: 0x2303 }, // 10lb scale
     ];
 
     this.UNIT_MODES = { 2: 'g', 11: 'oz' };
@@ -74,7 +75,7 @@ class Demo extends Component {
     this.setState({ shouldRead: true });
     const { device } = this.state;
     const { endpointNumber, packetSize } =
-      device.configuration.interfaces[0].alternate.endpoints[2];
+      device.configuration.interfaces[0].alternate.endpoints[0];
     let readLoop = () => {
       device
         // .transferIn(endpointNumber, packetSize)
@@ -87,11 +88,11 @@ class Demo extends Component {
           console.log(data, 'data');
           let weight = data[4] + 256 * data[5];
 
-          console.log(weight, 'weight');
-          setInterval(() => {
-            console.log(weight, 'weight');
-            weight = data[4] + 256 * data[5];
-          }, 5000);
+          // console.log(weight, 'weight');
+          // setInterval(() => {
+          //   console.log(weight, 'weight');
+          //   weight = data[4] + 256 * data[5];
+          // }, 5000);
 
           const unit = this.UNIT_MODES[data[2]];
 
@@ -140,7 +141,6 @@ class Demo extends Component {
       .then(() => device.claimInterface(0))
       .then((res) => {
         this.getWeight();
-        console.log(res, 'result');
       })
       .catch((err) => {
         console.error('USB Error', err);
