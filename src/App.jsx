@@ -27,12 +27,12 @@ const App = () => {
   // }
 
   // Bar code Scanner
-  const vendorId = 0x8087;
-  const productId = 0x0a2a;
+  // const vendorId = 0x8087;
+  // const productId = 0x0a2a;
 
   // Scale
-  // const vendorId = 0x067b;
-  // const productId = 0x2303;
+  const vendorId = 0x067b;
+  const productId = 0x2303;
 
   async function requestDevice() {
     try {
