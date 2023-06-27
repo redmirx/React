@@ -5,8 +5,8 @@ class Demo extends Component {
     super(props);
 
     this.USB_FILTERS = [
-      { vendorId: 0x0922, productId: 0x8003 }, // 10lb scale
-      // { vendorId: 0x067b, productId: 0x2303 }, // 10lb scale
+      // { vendorId: 0x0922, productId: 0x8003 }, // mini scale
+      { vendorId: 0x067b, productId: 0x2303 }, // mertech scale
     ];
 
     this.UNIT_MODES = { 2: 'g', 11: 'oz' };
